@@ -1,4 +1,4 @@
-Node Lab1 – Written Exercise
+﻿Node Lab1 – Written Exercise
 
 1- Explain why do we want sometimes to use setImmediate instead of use using setTimeOut?
 setImmediate doesn't use queue of functions. It checks queue of I/O event handlers. If all I/O events in the current snapshot are processed, it executes the callback. It queues them immediately after the last I/O handler somewhat like process.nextTick. So it is faster.
@@ -26,3 +26,14 @@ g. 	os
 h. 	process
 i. 	url
 j. 	domain
+
+require
+document
+module
+setInterval
+Buffer
+http 
+V8
+
+exports - local cutomized module
+NPM - is not a global object in Node. It isn't part of Node.
