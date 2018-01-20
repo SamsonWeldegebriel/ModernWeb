@@ -10,4 +10,4 @@ let server = http.createServer((req, res) => {
 	rStream.pipe(res);
 });
 
-server.listen(port, () =>console.log('Image Reading is listning to port ' + port));
+server.listen(port, () =>console.log('Image	 Reading is listning to port ' + port));

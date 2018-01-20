@@ -8,9 +8,7 @@ class Clock extends events {
 	tickEv() {
 		const scope = this;
 		
-		setInterval(function() {
-			scope.emit('tick');
-		}, 1000);
+		setInterval(() => scope.emit('tick'), 1000);
 	}
 }
 
