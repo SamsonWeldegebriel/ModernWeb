@@ -1,0 +1,14 @@
+{
+  "name": "exercise2",
+  "version": "1.0.0",
+  "description": "Exercise 2 system checking",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "sweldegebriel@mum.edu",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^5.5.6"
+  }
+}
