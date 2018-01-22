@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.route('/grades').post(function (req, res) {
+    var g = new Grade
+})
+
 module.exports = router;
