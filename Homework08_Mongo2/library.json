@@ -1,0 +1,26 @@
+{
+        "_id" : ObjectId("5a679681096919beb1a74092"),
+        "booktitle" : "The Secret",
+        "ISBN" : "1582701709",
+		"Author": "Rhonda Byrne",
+        "keywords" : [
+                "secret",
+                "success"
+        ],
+        "borrower" : [
+                {
+                        "student" : "Samson",
+                        "returndate" : "02/05/2018"
+                },
+                {
+                        "student" : "Asaad",
+                        "returndate" : "02/07/2018"
+                }
+        ]
+}
+
+/* 
+	To improve the library application performance I will use: 
+	Multi indexing on booktitle, author and keywords. db.book.createIndex({ booktitle:1 author: 1, keywords: 1 })
+
+*/
