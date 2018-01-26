@@ -21,6 +21,6 @@
 
 /* 
 	To improve the library application performance I will use: 
-	Multi indexing on booktitle, author and keywords. db.book.createIndex({ booktitle:1 author: 1, keywords: 1 })
+	Multi indexing on booktitle, author and keywords. db.book.createIndex({author: 1, keywords: 1 })
 
 */
