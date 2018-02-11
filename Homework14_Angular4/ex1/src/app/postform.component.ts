@@ -9,6 +9,7 @@
   import { IPosts } from './IPosts';
   import { error } from 'util';
 import { IUser } from './IUser';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-postform',
@@ -23,7 +24,7 @@ export class PostformComponent implements OnInit {
 
   somedata: string;
 
-  constructor(private fb: FormBuilder, private data: DataService) { 
+  constructor(private fb: FormBuilder, private data: DataService, private route: Router) { 
     this.postForm = fb.group({
       'name':['', Validators.required],
       'email': ['',Validators.compose([Validators.required, Validators.pattern(/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/)])],
@@ -35,6 +36,8 @@ export class PostformComponent implements OnInit {
   }
   onSubmit(): void{
     console.log(this.postForm.value);
+    this.route.navigateByUrl('thankyou');
+    return;
   }
 
   postValidator(control: FormControl):{[s: string]: boolean}{
