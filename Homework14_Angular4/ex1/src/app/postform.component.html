@@ -12,7 +12,9 @@
   <div *ngIf="!postForm.controls['post'].valid">Minimum Length 10</div>
   <br /><br />
   <button type="submit" [disabled]="!postForm.valid"> Submit</button>
+  <!-- <a [routerLink]="['thankyou']"></a> -->
 </form>
+
 <br />
 <button (click)="getData()">Get Data</button>
 
