@@ -23,21 +23,28 @@ export class PostformComponent implements OnInit {
   postUser: IUser;
 
   somedata: string;
+  postMessage: string;
 
-  constructor(private fb: FormBuilder, private data: DataService, private route: Router) { 
+  constructor(private fb: FormBuilder, private data: DataService, private router: Router) { 
     this.postForm = fb.group({
       'name':['', Validators.required],
-      'email': ['',Validators.compose([Validators.required, Validators.pattern(/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/)])],
+      'email': ['',Validators.compose([Validators.required, Validators.pattern(/^[a-zA-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/)])],
       'post': ['', this.postValidator]
     });
 
     //this.postForm.statusChanges.subscribe((data: any) =>console.log(data));
 
   }
-  onSubmit(): void{
+  onSubmit(){
     console.log(this.postForm.value);
-    this.route.navigateByUrl('thankyou');
+    this.router.navigateByUrl('thankyou');
     return;
+  }
+
+  getData(){
+    this.data.getPosts().subscribe( pd => this.postMessage = pd[0].body);
+    this.data.getUser().subscribe(user => 
+      this.postForm.setValue({'name': user.name, 'email' : user.email,'post': this.postMessage}));
   }
 
   postValidator(control: FormControl):{[s: string]: boolean}{
