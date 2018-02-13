@@ -1,0 +1,11 @@
+<h2>
+  Students' Profile
+</h2>
+
+<ul>
+  <ol *ngFor="let student of students">
+    <b>{{student._id}}. {{student.name}}</b>
+      <p>Student id: {{student.studID}} </p>
+      <p>Email: {{student.email}}</p>
+  </ol>
+</ul>

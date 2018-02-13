@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 
 import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { StudentsService } from './students.service';
+import { ProfileComponent } from './profile/profile.component';
 
 const ROUTES: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
-  // {path: 'home', component: AppComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'students', component: StudentsComponent},
+  {path: 'students/profile/:id', component: ProfileComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -18,12 +22,14 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [StudentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
